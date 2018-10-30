@@ -1,6 +1,8 @@
 # pluralsight-js-dev-env
 JavaScript development environment from Pluralsight course with Cory House
 
+When trying to learn JavaScript, I really struggled with understanding all the pieces involved.  This course REALLY helped a lot!  It talked about the different aspects of the development environment plus talked about what some of the modules are in the node_modules folder.
+
 Editors:
 This course uses Visual Studio Code for writing JavaScript. CSS, HTML, etc.  This is what I am using as well.  Settings for this are stored in the .editorconfig file.
 
@@ -28,3 +30,21 @@ This is a tool for automatically enforcing consistency in coding and helping to 
 Mocha:
 This is used for automated testing.  This is confined to unit testing (i.e. testing the returned values from our functions).  This doesn't come with an assertion library (i.e. expect(2+2).to.equal(4)) so we will be using Chi because it's popular and has a lot of styles available.  JSDOM allows for browser testing without actually launching a browser.  Cheerio is like jQuery for the server.  Files are being stored alongside our js files.  These tests should run whenever we save the files.
 We've also included a script in the package.json file to run our tests and a second script (test:watch) to make sure the tests are run each time the project is run.
+
+Continuous Integration:
+This course also talked about using a continuous integration server.  I've got the basic setup done for this but haven't actually signed up for a server.  The course recommends both Travis CI (travis-ci.org) and Appveyor (www.appveyor.com).  Travis CI is Lynux based and Appveyor is Windows based.  They recommended both to ensure that your code would run on both MAC and Windows.  Both are free and you can sign in using your GitHub account.
+
+HTTP Calls:
+For this, we are using Fetch since we will only need to make calls to the browser as opposed to just the server or both.  If we were just doing server-side code, request would be the recommended library to use.  Isomorphic Fetch would be good for use with both the server and browser.
+
+JSON Schema Faker:
+It can also be helpful to mock HTTP for testing purposes or to work when offline, etc.  JSON Schema Faker allows to mock up the APIs we will eventually use and populate them with test data (using faker.js, chance.js, and randexp.js).  Running npm run generateMockData in the terminal window will generate our fake data for us and create a db.json file.
+
+JSON Server:
+This allows us to use the data created above via our "fake" APIs.  This will use the sample data created above and create an API for us to use.  Run this by executing npm run start-mockapi in the terminal window.  A script was added to the package.json file to automatically regenerate the fake data (prestart-mockapi) and another parameter was added to the app start command to automatically start the mock api each time we restart the app.
+
+Project Structure:
+This section is here to talk a bit about, yes, structuring your project.  Many times you will see developers put JavaScript in a <script></script> tag in the *.html file.  Doing that won't allow for testing, linting, reusing, transpiling, or explicitly importing dependencies.  Therefore, JavaScript belongs in an *.js file.  Don't dynamically generate JS to handle different users, dynamically generate JSON instead that your JS code can use to customize the interface for your user.  Also, organize files by feature as opposed to file type.  Finally, extract business logic to POJOs (plain old JavaScript objects) as opposed to framework-specific files.
+
+Automated Production Build:
+Minification - Speeds page loads and saves bandwidth.  Code can still be debuged via sourcemaps discussed above.

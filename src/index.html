@@ -5,7 +5,21 @@
 
     </head>
     <body>
-        <h1>Hello World?</h1>
-        <script src="bundle.js"></script>
+        <h1>Users</h1>
+        <table>
+            <thead>
+                <th>&nbsp;</th>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </thead>
+            <tbody id="users">
+
+            </tbody>
+        </table>
+
+        <!-- We would normally reference the script bundle.js here but we are-->
+        <!-- using HtmlWebpackPlugin to inject the needed script for us automatically. -->
     </body>
 </html>

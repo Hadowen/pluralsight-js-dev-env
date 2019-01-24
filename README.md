@@ -3,7 +3,7 @@ JavaScript development environment from Pluralsight course with Cory House
 
 When trying to learn JavaScript, I really struggled with understanding all the pieces involved.  This course REALLY helped a lot!  It talked about the different aspects of the development environment plus talked about what some of the modules are in the node_modules folder.
 
-Editors:
+Code Editors:
 This course uses Visual Studio Code for writing JavaScript. CSS, HTML, etc.  This is what I am using as well.  Settings for this are stored in the .editorconfig file.
 
 Node and npm:
@@ -48,3 +48,14 @@ This section is here to talk a bit about, yes, structuring your project.  Many t
 
 Automated Production Build:
 Minification - Speeds page loads and saves bandwidth.  Code can still be debuged via sourcemaps discussed above.
+
+
+For those not (that) familiar with GitHub:
+git add .
+...will add the changes to your local repository
+
+git commit -m "[insert comment here]"
+...will commit the changes and label it with the provided comment
+
+git push
+...will send the changes to the git server

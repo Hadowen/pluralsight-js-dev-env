@@ -3,6 +3,17 @@ JavaScript development environment from Pluralsight course with Cory House
 
 When trying to learn JavaScript, I really struggled with understanding all the pieces involved.  This course REALLY helped a lot!  It talked about the different aspects of the development environment plus talked about what some of the modules are in the node_modules folder.
 
+
+So how do you use all this stuff?
+Running 'npm start' will start the code in dev mode and display the test app.
+
+Running 'npm run share' will start the code and provide a public URL with which others can use to navigate to your site.
+
+Running 'npm build -s' in the terminal windsow of Microsoft Studio Code (what I used to write this)
+will build the project and run it.  Once the build is complete, the browser will open to 'localhose:3000'
+```````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+
 Code Editors:
 This course uses Visual Studio Code for writing JavaScript. CSS, HTML, etc.  This is what I am using as well.  Settings for this are stored in the .editorconfig file.
 
@@ -10,10 +21,10 @@ Node and npm:
 These are "package managers" that help with managing library dependencies such as JQuery, etc.  These settings are stored in the package.json file.
 
 Express:
-This is the development web server we are using to test our code.
+This is the development web server we are using to test our code.  This can also be used in production which is why it was choosen.
 
 Localtunnel:
-This is used to share your app with others during the development process.
+This is used to share your app with others during the development process.  It creates a public URL that anyone with internet access can use to see your app.
 
 npm Scripts:
 Since we are using npm above for package management, it just makes sense to use npm scripts for automating some tasks.  These can be found in the "scripts": section of the package.json file.
@@ -49,7 +60,17 @@ This section is here to talk a bit about, yes, structuring your project.  Many t
 Automated Production Build:
 Minification - Speeds page loads and saves bandwidth.  Code can still be debuged via sourcemaps discussed above.
 
+WebpackMd5Hash:
+This will insert a hash code in the filename so that when your code changes, the hash will also change so that the cache of your JavaScript can be "busted" to account for the new code.  This can be seen in the dist folder of this project.
 
+ExtractTextPlugin:
+This plugin will pull the css ouf of the JavaScript file and create a separate file.  This allows for the file to be kept separate and can prevent any "hiccups" that might occur from JavaScript styling that sometimes occurrs.
+
+Error Logging:
+Track:js is a separate service that can be used for this purpose.  I did not add this code because I didn't feel like subscribing to the service. If you did use this service, it would simple entail adding two <script></script>s to the index.html file referencing Track:js.  These are actually provided when you sign up for the service.
+
+
+```````````````````````````````````````````````````````````````````````````````````````````````````````````
 For those not (that) familiar with GitHub:
 git add .
 ...will add the changes to your local repository

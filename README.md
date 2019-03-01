@@ -11,7 +11,7 @@ Running 'npm run share' will start the code and provide a public URL with which 
 
 Running 'npm build -s' in the terminal windsow of Microsoft Studio Code (what I used to write this)
 will build the project and run it.  Once the build is complete, the browser will open to 'localhose:3000'
-```````````````````````````````````````````````````````````````````````````````````````````````````````````
+
 
 
 Code Editors:
